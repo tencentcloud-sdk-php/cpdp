@@ -73,6 +73,7 @@ use TencentCloud\Cpdp\V20190820\Models as Models;
  * @method Models\QueryBankClearResponse QueryBankClear(Models\QueryBankClearRequest $req) 查询银行在途清算结果。查询时间段内交易网的在途清算结果。
  * @method Models\QueryBankTransactionDetailsResponse QueryBankTransactionDetails(Models\QueryBankTransactionDetailsRequest $req) 查询银行时间段内交易明细。查询时间段的会员成功交易。
  * @method Models\QueryBankWithdrawCashDetailsResponse QueryBankWithdrawCashDetails(Models\QueryBankWithdrawCashDetailsRequest $req) 查询银行时间段内清分提现明细。查询银行时间段内清分提现明细接口：若为“见证+收单退款”“见证+收单充值”记录时备注Note为“见证+收单充值,订单号”“见证+收单退款,订单号”，此接口可以查到T0/T1的充值明细和退款记录。查询标志：充值记录仍用3清分选项查询，退款记录同提现用2选项查询。
+ * @method Models\QueryBillDownloadURLResponse QueryBillDownloadURL(Models\QueryBillDownloadURLRequest $req) 获取单笔代发转账对账单下载URL
  * @method Models\QueryCommonTransferRechargeResponse QueryCommonTransferRecharge(Models\QueryCommonTransferRechargeRequest $req) 查询普通转账充值明细。接口用于查询会员主动转账进资金汇总账户的明细情况。若会员使用绑定账号转入，则直接入账到会员子账户。若未使用绑定账号转入，则系统无法自动清分到对应子账户，则转入挂账子账户由平台自行清分。若是 “见证+收单充值”T0充值记录时备注Note为“见证+收单充值,订单号” 此接口可以查到T0到账的“见证+收单充值”充值记录。
  * @method Models\QueryCustAcctIdBalanceResponse QueryCustAcctIdBalance(Models\QueryCustAcctIdBalanceRequest $req) 查询银行子账户余额。查询会员子账户以及平台的功能子账户的余额。
  * @method Models\QueryExchangeRateResponse QueryExchangeRate(Models\QueryExchangeRateRequest $req) 跨境-查询汇率
@@ -93,6 +94,7 @@ use TencentCloud\Cpdp\V20190820\Models as Models;
  * @method Models\QueryTradeResponse QueryTrade(Models\QueryTradeRequest $req) 跨境-贸易材料明细查询。
  * @method Models\QueryTransferBatchResponse QueryTransferBatch(Models\QueryTransferBatchRequest $req) 通过商家批次单号或者微信批次号查询批次单
  * @method Models\QueryTransferDetailResponse QueryTransferDetail(Models\QueryTransferDetailRequest $req) 通过商家或者微信批次明细单号查询明细单
+ * @method Models\QueryTransferResultResponse QueryTransferResult(Models\QueryTransferResultRequest $req) 智能代发-单笔代发转账查询接口
  * @method Models\RechargeByThirdPayResponse RechargeByThirdPay(Models\RechargeByThirdPayRequest $req) 会员在途充值(经第三方支付渠道)接口
  * @method Models\RechargeMemberThirdPayResponse RechargeMemberThirdPay(Models\RechargeMemberThirdPayRequest $req) 见证宝-会员在途充值(经第三方支付渠道)
  * @method Models\RefundResponse Refund(Models\RefundRequest $req) 如交易订单需退款，可以通过本接口将支付款全部或部分退还给付款方，聚鑫将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。最长支持1年的订单退款。在订单包含多个子订单的情况下，如果使用本接口传入OutTradeNo或TransactionId退款，则只支持全单退款；如果需要部分退款，请通过传入子订单的方式来指定部分金额退款。 
@@ -103,6 +105,7 @@ use TencentCloud\Cpdp\V20190820\Models as Models;
  * @method Models\ReviseMbrPropertyResponse ReviseMbrProperty(Models\ReviseMbrPropertyRequest $req) 修改会员属性-普通商户子账户。修改会员的会员属性。
  * @method Models\RevokeMemberRechargeThirdPayResponse RevokeMemberRechargeThirdPay(Models\RevokeMemberRechargeThirdPayRequest $req) 撤销会员在途充值(经第三方支付渠道)
  * @method Models\RevokeRechargeByThirdPayResponse RevokeRechargeByThirdPay(Models\RevokeRechargeByThirdPayRequest $req) 撤销会员在途充值(经第三方支付渠道)接口
+ * @method Models\TransferSinglePayResponse TransferSinglePay(Models\TransferSinglePayRequest $req) 智能代发-单笔代发转账接口
  * @method Models\UnBindAcctResponse UnBindAcct(Models\UnBindAcctRequest $req) 商户解除绑定的提现银行卡
  * @method Models\UnbindRelateAcctResponse UnbindRelateAcct(Models\UnbindRelateAcctRequest $req) 会员解绑提现账户。此接口可以支持会员解除名下的绑定账户关系。
  * @method Models\UnifiedOrderResponse UnifiedOrder(Models\UnifiedOrderRequest $req) 应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。
