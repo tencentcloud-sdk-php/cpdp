@@ -18,49 +18,36 @@ namespace TencentCloud\Cpdp\V20190820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DownloadBill返回参数结构体
+ * QueryOpenBankProfitSharePayee返回参数结构体
  *
- * @method string getFileName() 获取账单文件名
- * @method void setFileName(string $FileName) 设置账单文件名
- * @method string getFileMD5() 获取账单文件的MD5值
- * @method void setFileMD5(string $FileMD5) 设置账单文件的MD5值
- * @method string getDownloadUrl() 获取账单文件的真实下载地址
- * @method void setDownloadUrl(string $DownloadUrl) 设置账单文件的真实下载地址
- * @method string getStateType() 获取账单类型
-TRADE，对账单
-FUND，资金账单
+ * @method string getErrCode() 获取错误码。
+ * @method void setErrCode(string $ErrCode) 设置错误码。
+ * @method string getErrMessage() 获取错误信息。
+ * @method void setErrMessage(string $ErrMessage) 设置错误信息。
+ * @method QueryOpenBankProfitSharePayeeResult getResult() 获取返回结果
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setStateType(string $StateType) 设置账单类型
-TRADE，对账单
-FUND，资金账单
+ * @method void setResult(QueryOpenBankProfitSharePayeeResult $Result) 设置返回结果
 注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DownloadBillResponse extends AbstractModel
+class QueryOpenBankProfitSharePayeeResponse extends AbstractModel
 {
     /**
-     * @var string 账单文件名
+     * @var string 错误码。
      */
-    public $FileName;
+    public $ErrCode;
 
     /**
-     * @var string 账单文件的MD5值
+     * @var string 错误信息。
      */
-    public $FileMD5;
+    public $ErrMessage;
 
     /**
-     * @var string 账单文件的真实下载地址
-     */
-    public $DownloadUrl;
-
-    /**
-     * @var string 账单类型
-TRADE，对账单
-FUND，资金账单
+     * @var QueryOpenBankProfitSharePayeeResult 返回结果
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $StateType;
+    public $Result;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -68,12 +55,9 @@ FUND，资金账单
     public $RequestId;
 
     /**
-     * @param string $FileName 账单文件名
-     * @param string $FileMD5 账单文件的MD5值
-     * @param string $DownloadUrl 账单文件的真实下载地址
-     * @param string $StateType 账单类型
-TRADE，对账单
-FUND，资金账单
+     * @param string $ErrCode 错误码。
+     * @param string $ErrMessage 错误信息。
+     * @param QueryOpenBankProfitSharePayeeResult $Result 返回结果
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
@@ -90,20 +74,17 @@ FUND，资金账单
         if ($param === null) {
             return;
         }
-        if (array_key_exists("FileName",$param) and $param["FileName"] !== null) {
-            $this->FileName = $param["FileName"];
+        if (array_key_exists("ErrCode",$param) and $param["ErrCode"] !== null) {
+            $this->ErrCode = $param["ErrCode"];
         }
 
-        if (array_key_exists("FileMD5",$param) and $param["FileMD5"] !== null) {
-            $this->FileMD5 = $param["FileMD5"];
+        if (array_key_exists("ErrMessage",$param) and $param["ErrMessage"] !== null) {
+            $this->ErrMessage = $param["ErrMessage"];
         }
 
-        if (array_key_exists("DownloadUrl",$param) and $param["DownloadUrl"] !== null) {
-            $this->DownloadUrl = $param["DownloadUrl"];
-        }
-
-        if (array_key_exists("StateType",$param) and $param["StateType"] !== null) {
-            $this->StateType = $param["StateType"];
+        if (array_key_exists("Result",$param) and $param["Result"] !== null) {
+            $this->Result = new QueryOpenBankProfitSharePayeeResult();
+            $this->Result->deserialize($param["Result"]);
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
